@@ -1,0 +1,68 @@
+.gallery-section {
+    &__image:hover img + button {
+        opacity: 1;
+    }
+
+    a:hover {
+        background: $blue;
+    }
+
+    &__image:hover::after {
+        opacity: 1;
+    }
+
+    &__text {
+        margin-top: 45px;
+    }
+
+    &__title, &__desc {
+        font-family: $philosopher;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 24px;
+        
+        color: $blue;
+        margin-bottom: 20px;
+    }
+
+    &__desc {
+        color: #000;
+        letter-spacing: 0.05em;
+    }
+}
+
+.gallery-section__image {
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    display: block;
+
+    &::after {
+        background: rgba(0, 0, 0, .4);
+        transition: all .3s ease-in-out;
+        opacity: 0;
+    }
+    
+    button {
+        background: transparent;
+        transition: all .3s ease-in-out;
+        opacity: 0;
+    }
+}
+
+.gallery-section__image {
+	box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+	position: relative;
+	&::before, &::after {
+		@include pos($l:0, $t:0, $r:0, $b:0);
+		content: "";
+        margin: auto;
+        pointer-events: none;
+	}
+	&::before {
+		@include size(90%);
+		border: 2px solid #fff;
+		z-index: 7;
+	}
+}

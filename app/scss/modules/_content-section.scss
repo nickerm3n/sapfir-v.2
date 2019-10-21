@@ -1,0 +1,72 @@
+.content-section {
+	height: 100%;
+	padding: 45px;
+	background: #fff;
+
+	h1, p {
+		letter-spacing: 2px;
+	}
+}
+
+.content-section[data-color="blue"] {
+	background: linear-gradient(360deg, #223F78 0%, #2955AB 100%);
+
+	.description-section p,
+	.description-section p span,
+	.title-section h1 {
+		color: #fff;
+	}
+
+	.description-section p span {
+		font-weight: bold;
+	}
+}
+
+.title-section {
+	padding: 10px 0;
+	@media (min-width: $width-md) {
+		padding: 25px 0 65px;
+	}
+
+	h1 {
+		position: relative;
+		font-family: $philosopher;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 36px;
+		color: $blue;
+		z-index: 2;
+	}
+
+	&__number {
+		@include pos($t:-45px, $l:10px);
+		font-size: 144px;
+		letter-spacing: 0.05em;
+		color: $lightBlue;
+		z-index: 1;
+		opacity: .7;
+	}
+}
+
+.title-section[data-position="center"] {
+	text-align: center;
+	span {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.description-section {
+	margin-bottom: 25px;
+	p span {
+		color: $blue;
+		font-weight: bold;
+	}
+	p {
+		color: #000;
+		line-height: 21px;
+		letter-spacing: 0.05em;
+	}
+
+	& p:not(:last-child) {padding-bottom: 20px}
+}

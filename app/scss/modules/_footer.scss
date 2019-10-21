@@ -1,0 +1,34 @@
+.footer {
+    padding: 20px;
+    background: linear-gradient(360deg, #223F78 -734.78%, #2955AB 100%);
+    width: 100%;
+    @include pos($b:0);
+    color: #fff;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &, &__menu, &__social, &__contacts {
+        display: flex;
+        li:not(:last-child), p {
+            margin-right: 25px;
+        }
+    }
+
+    a {
+        color: #fff;
+    }
+
+    &__logo {
+
+    }
+    &__menu {
+
+    }
+    &__contacts {
+        
+    }
+    &__social {
+
+    }
+}
