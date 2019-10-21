@@ -22,6 +22,10 @@
 	}
 }
 
+.content-section[data-color="beige"] {
+	background: #FFF9F9;
+}
+
 .title-section {
 	padding: 10px 0;
 	@media (min-width: $width-md) {

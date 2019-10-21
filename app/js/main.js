@@ -20,20 +20,52 @@
 	            'tooltips': ['Главная страница', 'Сотрудничество', 'Наш опыт', 'Коллекции']
 	        },
 	       	normalScrollElements: null,
-	        normalScrollElementTouchThreshold: 5,
+	        normalScrollElementTouchThreshold: 10,
 	        touchSensitivity: 5,
 	        keyboardScrolling: false,
 	        sectionSelector: '.section',
 	        animateAnchor: false,
 
 			//events
-			onLeave: function(index, nextIndex, direction){},
-			afterLoad: function(anchorLink, index){},
-			afterRender: function(){},
-		});
-	});
+			onLeave: function(index, nextIndex, direction){
+                //fading out the txt of the leaving section
+                $('.section').eq(index -1).find('h1, p').fadeOut(700, 'easeInQuart');
+ 
+                //fading in the text of the destination (in case it was fadedOut)
+                $('.section').eq(nextIndex -1).find('h1, p').fadeIn(700, 'easeInQuart');
+			},
+			afterLoad: function(anchorLink, index){
+				if (index === 2) {
+					$.fn.pagepiling.setAllowScrolling(false);
 
-	$('#myModal').modal('toggle')
+				}
+			},
+			afterRender: function(){
+
+			},
+		});
+
+		function scrollingFunc(anchorLink) {
+			$(`[data-anchor='${anchorLink}']`).find('.content-section').css('overflow','scroll').on('scroll', function(e) {
+				console.log('it is scrolling')
+			})
+		}
+
+		function debounce(f, arg, ms) {
+
+			let isCooldown = false;
+		  
+			return function() {
+			  if (isCooldown) return;
+		  
+			  f.apply(this, arguments);
+		  
+			  isCooldown = true;
+		  
+			  setTimeout(() => isCooldown = false, ms);
+			};
+		 }
+	});
 
 	const Menu = {
 	  el: {
@@ -79,8 +111,6 @@
 	    Menu.el.menuBottom.toggleClass('menu-bottom-click');
 	    Menu.el.headerList.toggleClass('show-navigation');
 	    Menu.el.header.toggleClass('hero-image-content__header--layout');
-
-
 	  },
 	 activateContactsSection: function() {
 	    Menu.el.header.toggleClass('hero-image-content__header--click');
