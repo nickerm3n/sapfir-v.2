@@ -1,7 +1,10 @@
 .content-section {
 	height: 100%;
-	padding: 45px;
+	padding: 10px 0;
 	background: #fff;
+	@media (min-width: $width-md) {
+		padding: 45px;
+	}
 
 	h1, p {
 		letter-spacing: 2px;
@@ -27,7 +30,7 @@
 }
 
 .title-section {
-	padding: 10px 0;
+	padding: 10px 0 40px;
 	@media (min-width: $width-md) {
 		padding: 25px 0 65px;
 	}
@@ -44,11 +47,14 @@
 
 	&__number {
 		@include pos($t:-45px, $l:10px);
-		font-size: 144px;
+		font-size: 115px;
 		letter-spacing: 0.05em;
 		color: $lightBlue;
 		z-index: 1;
 		opacity: .7;
+		@media (min-width: $width-md) {
+			font-size: 144px;
+		}
 	}
 }
 

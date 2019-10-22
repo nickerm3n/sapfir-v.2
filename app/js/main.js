@@ -35,9 +35,12 @@
                 $('.section').eq(nextIndex -1).find('h1, p').fadeIn(700, 'easeInQuart');
 			},
 			afterLoad: function(anchorLink, index){
-				if (index === 2) {
-					$.fn.pagepiling.setAllowScrolling(false);
-
+				if ($(window).width() <= 414) {
+					if (index !== 1) {
+						scrollingFunc(anchorLink);
+					}
+				} else {
+					return;
 				}
 			},
 			afterRender: function(){
@@ -46,22 +49,28 @@
 		});
 
 		function scrollingFunc(anchorLink) {
-			$(`[data-anchor='${anchorLink}']`).find('.content-section').css('overflow','scroll').on('scroll', function(e) {
-				console.log('it is scrolling')
-			})
+			$.fn.pagepiling.setAllowScrolling(false);
+			const contentSection = $(`[data-anchor='${anchorLink}']`).find('.content-section')
+			let debounceScroll = debounce(contentSection, test, ['test-2'], 0)
+
+			contentSection.css('overflow','scroll')
+			  .on('scroll', function(e) {
+					debounceScroll()
+			  })
 		}
 
-		function debounce(f, arg, ms) {
+		function test(text) {
+	        if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+				$.fn.pagepiling.setAllowScrolling(true);
+			}
+		}
 
+		function debounce(that, f, arg, ms) {
 			let isCooldown = false;
-		  
 			return function() {
 			  if (isCooldown) return;
-		  
-			  f.apply(this, arguments);
-		  
+			  f.apply(that, arg);
 			  isCooldown = true;
-		  
 			  setTimeout(() => isCooldown = false, ms);
 			};
 		 }
