@@ -13,7 +13,7 @@
 	    flex-direction: column;
 	    justify-content: space-between;
 	    align-items: center;
-	    z-index: 5;
+	    z-index: 30;
 	   	transition: all .4s ease-out;
 	    @media (min-width: $width-sm) {
 			position: static; 
@@ -47,7 +47,7 @@
 			padding-bottom: 40px;
 
 			& img {
-				  animation-duration: 10s;
+				  animation-duration: 5s;
 				  animation-iteration-count: infinite;
 			}
 		}
@@ -68,6 +68,7 @@
 			transition: all .4s ease-out;
 			overflow: hidden;
 			width: 100%;
+			z-index: 16;
 			&.hero-image-content__header--click {
 				padding: 30px 30px 30px 100px;
 			}
@@ -88,6 +89,9 @@
 				transition: .55s;
 				z-index: 1;
 				transition: all .4s ease-out;
+									margin-right: auto;
+					margin-left: 35px;
+
 				&.show-navigation {
 					margin-top: -0%;
 				}
@@ -147,10 +151,13 @@
 			}
 		}
 		&__text-wrapper {
+			width: 60%;
 			transition: all .4s ease-out;
+			z-index: 15;
 			&.hero-image-content__text-wrapper--active {
 				margin-left: calc(10% + 70px);
 				@media (min-width: $width-sm) {
+					width: unset;
 					margin-left: 10%;
 				}
 			}

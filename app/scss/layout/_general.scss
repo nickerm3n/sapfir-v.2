@@ -147,7 +147,7 @@ img {
 }
 
 .burger-menu {
-	margin-left: auto;
+	// margin-left: auto;
 	z-index: 10;
 	@media (min-width: $width-sm) {
 		margin-left: 0;
@@ -209,4 +209,84 @@ img {
 	left: 0px;
 	top: 0px;
 	background: #fff;
+}
+
+.flex-template {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.my-1.mr-2 {
+	@extend .flex-template;
+	width: 100%;
+
+	span {
+		font-weight: bold;
+		font-family: $philosopher;
+		color: #fff;
+	}
+
+	span, select {
+		font-family: $philosopher;
+	}
+}
+
+.form-group label {
+	color: #fff !important;
+}
+
+.custom-select {
+	width: 135px !important;
+}
+
+.form-group-wrapper {
+	width: 100%;
+	margin-top: 35px;
+
+	.form-control {
+		width: 100%;
+	}
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column !important;
+	align-items: flex-start !important;
+	margin-bottom: 10px !important;
+	width: 100%;
+
+	label {
+		display: inline-block;
+		font-weight: bold;
+		margin-bottom: 5px;
+		color: $blue;
+	}
+}
+
+.form-button-group {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+
+	button[type="submit"] {
+		display: block;
+		margin-left: 5px;
+	}
+}
+
+.form-group.row {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.form-group.row:last-child {
+	.col-12 {
+		text-align: right;
+	}
+}
+
+.modal-body {
+	background: linear-gradient(1turn,#223f78,#2955ab);
 }

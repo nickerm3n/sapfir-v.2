@@ -87,7 +87,6 @@
 	    heroImageContent: $('.hero-image-content__text-wrapper'),
 	    logo: $('.contacts__logo'),
 	    contacts: $('.contacts'),
-	    buttonFQA: $('.button-FAQ'),
 	    feedbackSubmit: $('.feedback-submit')
 	  },
 	  
@@ -104,14 +103,6 @@
 	        event.preventDefault();
 	      }
 	    );
-	    Menu.el.buttonFQA
-	        .on(
-	          'click',
-	        function(event) {
-	        Menu.activateContactsSection(event);
-	        event.preventDefault();
-	      }
-	    );
 	  },
 	  
 	 activateMenu: function() {
@@ -120,12 +111,9 @@
 	    Menu.el.menuBottom.toggleClass('menu-bottom-click');
 	    Menu.el.headerList.toggleClass('show-navigation');
 	    Menu.el.header.toggleClass('hero-image-content__header--layout');
-	  },
-	 activateContactsSection: function() {
 	    Menu.el.header.toggleClass('hero-image-content__header--click');
 	    Menu.el.contacts.toggleClass('contacts-active');
 	    Menu.el.heroImageContent.toggleClass('hero-image-content__text-wrapper--active');
-	    Menu.el.buttonFQA.toggleClass('button-FAQ__active');
 	  },
 	};
 
