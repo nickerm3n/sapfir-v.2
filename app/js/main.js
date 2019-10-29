@@ -37,7 +37,7 @@
 			afterLoad: function(anchorLink, index) {
 				console.log(index);
 				if ($(window).width() <= 414) {
-					if (index !== 1 || index !== 4) {
+					if (index !== 1 && index !== 4) {
 						scrollingFunc(anchorLink);
 					} else {
 						$.fn.pagepiling.setAllowScrolling(true);
