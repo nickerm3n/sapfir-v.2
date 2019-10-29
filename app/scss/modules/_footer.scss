@@ -20,13 +20,22 @@
     }
 
     &__logo {
-
+        display: none;
+        @media (min-width: $width-sm) {
+            display: flex;
+        }
     }
     &__menu {
-
+        display: none;
+        @media (min-width: $width-sm) {
+            display: flex;
+        }
     }
     &__contacts {
-        
+        display: none;
+        @media (min-width: $width-sm) {
+            display: flex;
+        }
     }
     &__social {
 

@@ -291,3 +291,10 @@ img {
 .modal-body {
 	background: linear-gradient(1turn,#223f78,#2955ab);
 }
+
+#pp-nav {
+	display: none;
+	@media (min-width: $width-sm) {
+		display: block;
+	}
+}

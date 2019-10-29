@@ -154,6 +154,10 @@
 			width: 60%;
 			transition: all .4s ease-out;
 			z-index: 15;
+
+			p {
+				letter-spacing: 2px;
+			}
 			&.hero-image-content__text-wrapper--active {
 				margin-left: calc(10% + 70px);
 				@media (min-width: $width-sm) {

@@ -34,10 +34,13 @@
                 //fading in the text of the destination (in case it was fadedOut)
                 $('.section').eq(nextIndex -1).find('h1, p').fadeIn(700, 'easeInQuart');
 			},
-			afterLoad: function(anchorLink, index){
+			afterLoad: function(anchorLink, index) {
+				console.log(index);
 				if ($(window).width() <= 414) {
-					if (index !== 1) {
+					if (index !== 1 || index !== 4) {
 						scrollingFunc(anchorLink);
+					} else {
+						$.fn.pagepiling.setAllowScrolling(true);
 					}
 				} else {
 					return;
