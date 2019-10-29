@@ -263,7 +263,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="form-inline">
+					<form class="form-inline" id="form-1">
 						<label class="my-1 mr-2" for="inlineFormCustomSelectPref">
 							<span>Какой фасон платья Вас интересует?</span>
 							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
@@ -295,9 +295,9 @@
 								<option value="5">Цветное</option>
 							</select>
 						</label>
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref4">
+						<label class="my-1 mr-2" for="inlineFormCustomSelectPref5">
 							<span>Длинна рукава?</span>
-							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref4">
+							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref5">
 								<option selected>Выбрать...</option>
 								<option value="1">Без рукава</option>
 								<option value="2">Длинный</option>
@@ -306,33 +306,33 @@
 								<option value="5">Рукав клеш</option>
 							</select>
 						</label>
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref4">
+						<label class="my-1 mr-2" for="inlineFormCustomSelectPref6">
 							<span>Хотели бы Вы фату?</span>
-							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref4">
+							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref6">
 								<option selected>Выбрать...</option>
 								<option value="1">Да</option>
 								<option value="2">Нет</option>
 							</select>
 						</label>
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref4">
+						<label class="my-1 mr-2" for="inlineFormCustomSelectPref8">
 							<span>Нужна ли Вам накидка?</span>
-							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref4">
+							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref8">
 								<option selected>Выбрать...</option>
 								<option value="1">Да</option>
 								<option value="2">Нет</option>
 							</select>
 						</label>
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref4">
+						<label class="my-1 mr-2" for="inlineFormCustomSelectPref9">
 							<span>Длинна шлейфа?</span>
-							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref4">
+							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref9">
 								<option selected>Выбрать...</option>
 								<option value="2">Короткий</option>
 								<option value="2">Без шлейфа</option>
 							</select>
 						</label>
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref4">
+						<label class="my-1 mr-2" for="inlineFormCustomSelectPref10">
 							<span>Ценовая категория платья?</span>
-							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref4">
+							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref10">
 								<option selected>Выбрать...</option>
 								<option value="1">$600-1000</option>
 								<option value="2">$1000-1500</option>
@@ -340,9 +340,9 @@
 								<option value="2">$2000-2500</option>
 							</select>
 						</label>
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref4">
+						<label class="my-1 mr-2" for="inlineFormCustomSelectPref11">
 							<span>Вы являетесь?</span>
-							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref4">
+							<select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref11">
 								<option selected>Выбрать...</option>
 								<option value="1">Невеста</option>
 								<option value="2">Владелец салона</option>
@@ -351,18 +351,18 @@
 						</label>
 						<div class="form-group-wrapper">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Имя</label>
-								<input type="text" class="form-control" id="exampleInputEmail1"
+								<label for="exampleInputName1">Имя</label>
+								<input type="text" class="form-control" id="exampleInputName1"
 									aria-describedby="emailHelp" placeholder="Введите имя">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputPassword1">E-mail</label>
-								<input type="email" class="form-control" id="exampleInputPassword1"
+								<label for="exampleInputEmail1">E-mail</label>
+								<input type="email" class="form-control" id="exampleInputEmail1"
 									placeholder="Введите E-mail">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputPassword1">Телефон</label>
-								<input type="text" class="form-control" id="exampleInputPassword1"
+								<label for="exampleInputTel1">Телефон</label>
+								<input type="text" class="form-control" id="exampleInputTel1"
 									placeholder="Введите телефон">
 							</div>
 							<div class="form-button-group">
@@ -388,38 +388,38 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form enctype="multipart/form-data" method="post" id="form-2">
 						<div class="form-group row">
-							<label for="inputEmail3" class="col-12 col-form-label">Имя</label>
+							<label for="inputName3" class="col-12 col-form-label">Имя</label>
 							<div class="col-12">
-								<input type="text" class="form-control" id="inputEmail3" placeholder="Введите имя">
+								<input type="text" class="form-control" id="inputName3" placeholder="Введите имя" name="name">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="inputPassword3" class="col-12 col-form-label">Телефон</label>
+							<label for="inputTeld3" class="col-12 col-form-label">Телефон</label>
 							<div class="col-12">
-								<input type="text" class="form-control" id="inputPassword3"
-									placeholder="Введите телефон">
+								<input type="text" class="form-control" id="inputTeld3"
+									placeholder="Введите телефон"  name="phone">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="inputPassword3" class="col-12 col-form-label">E-mail</label>
+							<label for="inputEmail3" class="col-12 col-form-label">E-mail</label>
 							<div class="col-12">
-								<input type="text" class="form-control" id="inputPassword3"
-									placeholder="Введите E-mail">
+								<input type="text" class="form-control" id="inputEmail3"
+									placeholder="Введите E-mail"  name="email">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="inputPassword3" class="col-12 col-form-label">Город</label>
+							<label for="inputCity3" class="col-12 col-form-label">Город</label>
 							<div class="col-12">
-								<input type="text" class="form-control" id="inputPassword3" placeholder="Введите город">
+								<input type="text" class="form-control" id="inputCity3" placeholder="Введите город" name="city">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="inputPassword3" class="col-12 col-form-label">Что хотели бы обсудить?</label>
+							<label for="inputDisc3" class="col-12 col-form-label">Что хотели бы обсудить?</label>
 							<div class="col-12">
-								<input type="text" class="form-control" id="inputPassword3"
-									placeholder="Что хотели бы обсудить?">
+								<input type="text" class="form-control" id="inputDisc3"
+									placeholder="Что хотели бы обсудить?" name="text">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -528,6 +528,8 @@
 		<a href="./images/gallery-2/19-1-23==.jpg" data-fancybox="gallery-2"></a>
 	</div>
 
+	
+
 	<!--build:js js/main.min.js -->
 	<script src="js/libs/jquery.min.js"></script>
 	<script src="js/libs/jquery.pagepiling.min.js"></script>
@@ -535,6 +537,31 @@
 	<script src="js/libs/bootstrap.bundle.min.js"></script>
 	<script src="js/main.js"></script>
 	<!--endbuild-->
-</body>
 
-</!--build:js>
+	<!-- <script>
+		// Отправка данных на сервер
+		$('#form').trigger('reset');
+		$(function() {
+		  'use strict';
+		  $('#form').on('submit', function(e) {
+			e.preventDefault();
+			$.ajax({
+			  url: './send.php',
+			  type: 'POST',
+			  contentType: false,
+			  processData: false,
+			  data: new FormData(this),
+			  success: function(msg) {
+				console.log(msg);
+				if (msg == 'ok') {
+				  alert('Сообщение отправлено');
+				  $('#form').trigger('reset'); // очистка формы
+				} else {
+				  alert('Ошибка');
+				}
+			  }
+			});
+		  });
+		});
+		</script> -->
+</body>
