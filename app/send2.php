@@ -8,10 +8,19 @@ require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 // Переменные, которые отправляет пользователь
 $name = $_POST['name'];
+$style = $_POST['style'];
+$typeOfDress = $_POST['typeOfDress'];
+$color = $_POST['color'];
+$long = $_POST['long'];
+$veil = $_POST['veil'];
+$cape = $_POST['cape'];
+$plume = $_POST['plume'];
+$pricecategory = $_POST['pricecategory'];
+$person = $_POST['person'];
+
+$name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$city = $_POST['city'];
-$discuss = $_POST['discuss'];
 
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
@@ -30,7 +39,7 @@ try {
     // Получатель письма
     //cvltof666@gmail.com
     $mail->addAddress('nickermen13@gmail.com');  
-    // $mail->addAddress('cvltof666@gmail.com'); // Ещё один, если нужен
+    $mail->addAddress('cvltof666@gmail.com'); // Ещё один, если нужен
     // Прикрипление файлов к письму
     if (!empty($_FILES['myfile']['name'][0])) {
         for ($ct = 0; $ct < count($_FILES['myfile']['tmp_name']); $ct++) {
@@ -50,10 +59,17 @@ try {
     
     $mail->Subject = 'Заголовок письма';
     $mail->Body    = "<b>Имя:</b> $name <br>
+    <b>Какой фасон платья Вас интересует?:</b> $style<br>
+    <b>Открытое или закрытое платье?:</b> $typeOfDress<br>
+    <b>Какой цвет предпочитаете?:</b> $color<br>
+    <b>Длинна рукава?:</b> $long<br>
+    <b>Хотели бы Вы фату?:</b> $veil<br>
+    <b>Нужна ли Вам накидка?:</b> $cape<br>
+    <b>Длина шлейфа?:</b> $plume<br>
+    <b>Ценовая категория платья?:</b> $pricecategory<br>
+    <b>Вы являетесь?:</b> $person<br><br><br>
     <b>Почта:</b> $email<br><br>
-    <b>Телефон:</b> $phone<br>
-    <b>Город:</b> $city<br>
-    <b>Что хотели бы обсудить?:</b> $discuss<br>";
+    <b>Телефон:</b> $phone<br>";
 
 // Проверяем отравленность сообщения
     if ($mail->send()) {
