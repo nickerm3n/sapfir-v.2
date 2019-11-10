@@ -89,8 +89,8 @@
 				transition: .55s;
 				z-index: 1;
 				transition: all .4s ease-out;
-									margin-right: auto;
-					margin-left: 35px;
+				margin-right: auto;
+				margin-left: 35px;
 
 				&.show-navigation {
 					margin-top: -0%;
@@ -103,6 +103,9 @@
 			}
 			& li:nth-child(2) {
 				@media (min-width: $width-sm) {
+					margin: 0 40px;
+				}
+				@media (min-width: $width-md) {
 					margin: 0 100px;
 				}
 			}

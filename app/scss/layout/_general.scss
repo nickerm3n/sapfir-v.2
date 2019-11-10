@@ -298,3 +298,16 @@ img {
 		display: block;
 	}
 }
+
+.language-pagination {
+	@include pos($r:30px, $t:32px);
+	z-index: 10;
+	padding: 5px;
+	background: rgba(255, 255, 255, .7);
+	border-radius: 8px;
+	font-weight: 700;
+
+	&-page.active {
+		color: tomato;
+	}
+}
