@@ -36,6 +36,9 @@
         @media (min-width: $width-sm) {
             display: flex;
         }
+        a:nth-child(2) {
+            padding-right: 8px
+        }
     }
     &__social {
 
