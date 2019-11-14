@@ -35,8 +35,8 @@
                 $('.section').eq(nextIndex -1).find('h1, p').fadeIn(700, 'easeInQuart');
             },
             afterLoad: function(anchorLink, index) {
-            	console.log(index);
-            	if ($(window).width() <= 414) {
+            	console.log($(window).height());
+            	if ($(window).width() <= 414 || $(window).height() <= 747 ) {
             		if (index !== 1 && index !== 4) {
             			scrollingFunc(anchorLink);
             		} else {
@@ -141,8 +141,8 @@
 		      	alert('Ошибка');
 		    }
   		}
+		});
 	});
-});
 	$('#form-2').on('submit', function(e) {
 		e.preventDefault();
 		clearFields(this)
@@ -161,10 +161,22 @@
 		      } else {
 		      	alert('Ошибка');
 		    }
-  		}
+	  		}
+		});
 	});
-});
 
+	function CreateLinks(number, path, parentNode) {
+		console.log(parentNode)
+		for (let i = 2; i < number; i++) {
+			let link = $(`<a href="./images/${path}/${i}.jpg" data-fancybox="${path}"></a>`);
+			$(parentNode).append(link);
+		}
+	}
+
+	const galleries = $('.gallery-images');
+	galleries.each(function(inx, gallery) {
+		CreateLinks(48, `gallery-${inx+1}`, this)
+	})
 
 })(jQuery);
 
