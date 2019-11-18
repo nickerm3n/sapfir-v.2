@@ -48,7 +48,7 @@
             		
             	}
             	if (index === 1) {
-            		$('.content-section').removeAttr('style').scrollTop(0)
+            		$('.content-section').scrollTop(0)
             	}
             },
             afterRender: function(){
@@ -70,8 +70,6 @@
 			if ($(section).scrollTop() + $(section).innerHeight() > $(section)[0].scrollHeight - 1) {
 				$(section).off('scroll')
 				$.fn.pagepiling.setAllowScrolling(true);
-				return true;
-
 			}
 		}
 	});
