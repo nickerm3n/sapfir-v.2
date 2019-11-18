@@ -33,17 +33,22 @@
 
                 //fading in the text of the destination (in case it was fadedOut)
                 $('.section').eq(nextIndex -1).find('h1, p').fadeIn(700, 'easeInQuart');
+               // console.log('!!!', $('.content-section').eq(index +))
+               console.log(index)
+
             },
             afterLoad: function(anchorLink, index) {
-            	console.log($(window).height());
             	if ($(window).width() <= 414 || $(window).height() <= 747 ) {
-            		if (index !== 1 && index !== 4) {
+            		if (index !== 1 ) {
             			scrollingFunc(anchorLink);
             		} else {
             			$.fn.pagepiling.setAllowScrolling(true);
             		}
             	} else {
-            		return;
+            		
+            	}
+            	if (index === 1) {
+            		$('.content-section').removeAttr('style').scrollTop(0)
             	}
             },
             afterRender: function(){
@@ -53,29 +58,21 @@
 
 		function scrollingFunc(anchorLink) {
 			$.fn.pagepiling.setAllowScrolling(false);
-			const contentSection = $(`[data-anchor='${anchorLink}']`).find('.content-section')
-			let debounceScroll = debounce(contentSection, test, ['test-2'], 0)
-
-			contentSection.css('overflow','scroll')
-			.on('scroll', function(e) {
-				debounceScroll()
-			})
+			const contentSection = $(`[data-anchor='${anchorLink}']`)
+			  .find('.content-section')
+			contentSection.css({'overflow': 'scroll'})
+			  .on('scroll', function(e) {
+				checkHeight(this)
+			  })
 		}
 
-		function test(text) {
-			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+		function checkHeight(section) {
+			if ($(section).scrollTop() + $(section).innerHeight() > $(section)[0].scrollHeight - 1) {
+				$(section).off('scroll')
 				$.fn.pagepiling.setAllowScrolling(true);
-			}
-		}
+				return true;
 
-		function debounce(that, f, arg, ms) {
-			let isCooldown = false;
-			return function() {
-				if (isCooldown) return;
-				f.apply(that, arg);
-				isCooldown = true;
-				setTimeout(() => isCooldown = false, ms);
-			};
+			}
 		}
 	});
 

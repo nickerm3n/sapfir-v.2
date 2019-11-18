@@ -12,7 +12,10 @@
     }
 
     &__text {
-        margin-top: 45px;
+        margin-top: 25px;
+        @media (min-width: $width-sm) {
+            margin-bottom: 45px;
+        }
     }
 
     &__title, &__desc {
@@ -72,4 +75,11 @@
 		border: 2px solid #fff;
 		z-index: 7;
 	}
+}
+
+.gallery-section__image-min {
+    margin-bottom: 25px;
+    @media (min-width: $width-md) {
+        margin-bottom: 0;
+    }
 }
