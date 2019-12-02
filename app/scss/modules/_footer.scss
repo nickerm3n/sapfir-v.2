@@ -1,49 +1,53 @@
 .footer {
-    padding: 20px;
-    background: linear-gradient(360deg, #223F78 -734.78%, #2955AB 100%);
-    width: 100%;
+  padding: 20px;
+  background: linear-gradient(360deg, #223f78 -734.78%, #2955ab 100%);
+  width: 100%;
+  display: flex;
+  color: #fff;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  @media (min-width: $width-sm) {
+    @include pos($b: 0, $l: 0);
+  }
+
+  &,
+  &__menu,
+  &__social,
+  &__contacts {
     display: flex;
+    li:not(:last-child),
+    p {
+      margin-right: 25px;
+    }
+  }
+
+  a {
     color: #fff;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+  }
+
+  &__logo {
+    display: none;
     @media (min-width: $width-sm) {
-        @include pos($b:0, $l:0);
+      display: flex;
     }
-
-    &, &__menu, &__social, &__contacts {
-        display: flex;
-        li:not(:last-child), p {
-            margin-right: 25px;
-        }
+  }
+  &__menu {
+    display: none;
+    @media (min-width: $width-sm) {
+      display: flex;
     }
-
-    a {
-        color: #fff;
+  }
+  &__contacts {
+    display: none;
+    @media (min-width: $width-sm) {
+      display: flex;
     }
-
-    &__logo {
-        display: none;
-        @media (min-width: $width-sm) {
-            display: flex;
-        }
+    a:nth-child(2) {
+      padding-right: 8px;
     }
-    &__menu {
-        display: none;
-        @media (min-width: $width-sm) {
-            display: flex;
-        }
-    }
-    &__contacts {
-        display: none;
-        @media (min-width: $width-sm) {
-            display: flex;
-        }
-        a:nth-child(2) {
-            padding-right: 8px
-        }
-    }
-    &__social {
-
-    }
+  }
+  &__social {
+  }
 }
